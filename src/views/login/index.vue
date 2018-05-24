@@ -36,8 +36,8 @@ export default {
     };
     return {
       loginForm: {
-        pass: '',
-        username: '',
+        pass: 'admin',
+        username: 'admin',
       },
       rules2: {
         pass: [{ validator: validatePass, trigger: 'blur' }],
@@ -49,7 +49,12 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!');
+          this.$store
+            .dispatch('loginByUsername', this.loginForm)
+            .then((data) => {
+              console.log(data);
+              this.$router.push({ path: '/' });
+            });
         } else {
           console.log('error submit!!');
           return false;

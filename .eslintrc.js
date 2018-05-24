@@ -30,11 +30,12 @@ module.exports = {
       {
         arrays: 'ignore',
         objects: 'ignore',
-        imports: 'always',
-        exports: 'always',
+        imports: 'never',
+        exports: 'never',
         functions: 'ignore',
       },
     ],
     'space-before-function-paren': ['error', 'never'],
+    'object-curly-spacing': ['error', 'always'],
   },
 };
