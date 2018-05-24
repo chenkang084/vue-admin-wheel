@@ -5,6 +5,10 @@ import Vue from 'vue';
 import 'normalize.css/normalize.css'; // A modern alternative to CSS resets
 import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+
+// import mock api, if you want to connect you real back end, please comment the line
+import './mock';
+
 import store from './store';
 
 import App from './App';
