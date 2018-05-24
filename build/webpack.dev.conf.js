@@ -42,7 +42,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
-    }
+    },
+    setup: function(app) {
+      app.use(function(req, res, next) {
+        console.log('Middleware triggered');
+        next();
+      });
+    },
   },
   plugins: [
     new webpack.DefinePlugin({
