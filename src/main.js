@@ -6,6 +6,10 @@ import 'normalize.css/normalize.css'; // A modern alternative to CSS resets
 import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
+import './style/index.scss';
+
+import './permission';
+
 // import mock api, if you want to connect you real back end, please comment the line
 import './mock';
 

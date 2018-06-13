@@ -6,3 +6,4 @@ Mock.setup({
 });
 
 Mock.mock(/\/login\/login/, 'post', Login.loginByUsername);
+Mock.mock(/\/login\/logout/, 'put', Login.logout);

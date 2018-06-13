@@ -7,3 +7,10 @@ export function loginByUsername(userInfo) {
     data: userInfo,
   });
 }
+
+export function logout() {
+  return request({
+    url: '/login/logout',
+    method: 'put',
+  });
+}

@@ -1,4 +1,4 @@
-import { loginByUsername } from '../../service/api/login';
+import { loginByUsername, logout } from '../../service/api/login';
 import { setToken } from '../../util/auth';
 
 const user = {
@@ -8,6 +8,9 @@ const user = {
   mutations: {
     setToken(state, token) {
       state.token = token;
+    },
+    removeToken(state) {
+      state.token = '';
     },
   },
   actions: {
@@ -21,6 +24,18 @@ const user = {
             // save token to cookie
             setToken(data.token);
             resolve(data);
+          });
+        } catch (error) {
+          reject(error);
+        }
+      });
+    },
+    logout({ commit }) {
+      return new Promise((resolve, reject) => {
+        try {
+          logout().then(() => {
+            commit('removeToken');
+            resolve();
           });
         } catch (error) {
           reject(error);

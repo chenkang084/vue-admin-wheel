@@ -1,0 +1,9 @@
+@import 'nprogress/nprogress.css';
+@import './variables.scss';
+
+html,
+body,
+#app,
+.app-container {
+  height: $pageHeight;
+}
