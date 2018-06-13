@@ -51,7 +51,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     },
     setup: function(app) {
       app.use(function(req, res, next) {
-        console.log('Middleware triggered');
+        // console.log('Middleware triggered');
         next();
       });
     },
